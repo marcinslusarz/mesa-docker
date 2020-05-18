@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 meson .. --prefix ~/mesa-bin  -Dgallium-drivers=iris -Dvulkan-drivers=intel -Ddri-drivers=i965 "$@"
