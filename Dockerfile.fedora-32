@@ -32,3 +32,5 @@ COPY cross_file_rh.txt mesa/cross_file.txt
 COPY conf32_rh.sh mesa/conf32.sh
 
 COPY conf64.sh mesa/conf64.sh
+
+COPY build.sh mesa/build.sh
