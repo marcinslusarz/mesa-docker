@@ -1,0 +1,34 @@
+FROM fedora:32
+MAINTAINER marcin.slusarz@intel.com
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# broken packages: libunwind-devel libzstd-devel
+
+RUN dnf update -y \
+        && dnf install -y git meson gcc g++ python3-mako bison flex \
+         zlib-devel.x86_64 expat-devel.x86_64 libdrm-devel.x86_64 llvm-devel.x86_64 elfutils-libelf-devel.x86_64 \
+         wayland-devel.x86_64 wayland-protocols-devel \
+         libX11-devel.x86_64 libXext-devel.x86_64 libXdamage-devel.x86_64 libxshmfence-devel.x86_64 libXxf86vm-devel.x86_64 libXrandr-devel.x86_64 \
+         valgrind-devel.x86_64 libunwind-devel.x86_64 libzstd-devel.x86_64 \
+         libva-devel.x86_64 libXv-devel.x86_64 libXvMC-devel.x86_64 libvdpau-devel.x86_64 libomxil-bellagio-devel.x86_64 lm_sensors-devel.x86_64 \
+         zlib-devel.i686 expat-devel.i686 libdrm-devel.i686 llvm-devel.i686 elfutils-libelf-devel.i686 \
+         wayland-devel.i686 \
+         libX11-devel.i686 libXext-devel.i686 libXdamage-devel.i686 libxshmfence-devel.i686 libXxf86vm-devel.i686 libXrandr-devel.i686 \
+         valgrind-devel.i686 \
+         libva-devel.i686 libXv-devel.i686 libXvMC-devel.i686 libvdpau-devel.i686 libomxil-bellagio-devel.i686 lm_sensors-devel.i686 \
+         glibc-devel.i686 libstdc++-devel.i686 pkgconf-pkg-config.i686 libxcb-devel.i686 libXau-devel.i686 libXfixes-devel.i686 libXrender-devel.i686 \
+         glibc-devel.x86_64 libstdc++-devel.x86_64 pkgconf-pkg-config.x86_64 libxcb-devel.x86_64 libXau-devel.x86_64 libXfixes-devel.x86_64 libXrender-devel.x86_64 \
+         gdb mc glx-utils mesa-dri-drivers.x86_64 mesa-dri-drivers.i686 \
+        && git clone https://gitlab.freedesktop.org/mesa/mesa.git \
+        && rm -r mesa/* \
+        && echo 'export PATH=~/bin:/usr/games:$PATH' >> ~/.bashrc \
+        && mkdir -p ~/bin mesa/build64 mesa/build32
+
+COPY mygl_rh.sh /root/bin/mygl.sh
+
+COPY cross_file_rh.txt mesa/cross_file.txt
+
+COPY conf32_rh.sh mesa/conf32.sh
+
+COPY conf64.sh mesa/conf64.sh

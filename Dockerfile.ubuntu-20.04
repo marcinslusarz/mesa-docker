@@ -28,10 +28,10 @@ RUN dpkg --add-architecture i386 \
         && echo 'export PATH=~/bin:/usr/games:$PATH' >> ~/.bashrc \
         && mkdir -p ~/bin mesa/build64 mesa/build32
 
-COPY mygl.sh /root/bin/mygl.sh
+COPY mygl_deb.sh /root/bin/mygl.sh
 
-COPY cross_file.txt mesa/cross_file.txt
+COPY cross_file_deb.txt mesa/cross_file.txt
 
-COPY conf32.sh mesa/conf32.sh
+COPY conf32_deb.sh mesa/conf32.sh
 
 COPY conf64.sh mesa/conf64.sh
