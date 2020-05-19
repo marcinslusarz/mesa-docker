@@ -10,7 +10,7 @@ or
 ./run.sh my-fed fedora-32
 ```
 
-Inside the container:
+Inside a container:
 ```
 cd mesa
 git fetch
@@ -30,22 +30,19 @@ Ctrl-D exits Docker
 
 Outside container:
 
+Reattach to an existing container:
 ```
 docker container start my-ubu
-```
-or
-```
-docker container start my-fed
-```
-
-```
 docker container attach my-ubu
 ```
 or
 ```
+docker container start my-fed
 docker container attach my-fed
 ```
 
+
+Drop a container:
 ```
 docker container rm my-ubu
 ```
@@ -53,3 +50,6 @@ or
 ```
 docker container rm my-fed
 ```
+
+Images:
+[https://hub.docker.com/repository/docker/marcinslusarz/mesa/tags]
