@@ -14,4 +14,5 @@ docker run -it \
 --env=DISPLAY \
 --name="$1" \
 --device /dev/dri/card0 \
+--device /dev/dri/renderD128 \
 marcinslusarz/mesa:$2
