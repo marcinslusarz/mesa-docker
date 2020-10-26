@@ -9,14 +9,14 @@ RUN dpkg --add-architecture i386 \
         && apt-get install -y --no-install-recommends \
                    build-essential meson git python python3-setuptools python3-mako bison flex valgrind pkg-config \
                    gcc g++ zlib1g-dev libexpat-dev \
-                   libx11-dev libxext-dev libxcb-randr0-dev libxrandr-dev \
+                   libx11-dev libxext-dev libxcb-randr0-dev libxrandr-dev libxcb-shm0-dev \
                    libwayland-dev wayland-protocols \
                    llvm-dev libzstd-dev libunwind-dev  libsensors-dev \
                    libdrm-dev libwayland-egl-backend-dev libxdamage-dev libxcb-glx0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev \
                    libelf-dev libvdpau-dev libxv-dev libxvmc-dev libva-dev libomxil-bellagio-dev \
                    gcc-multilib g++-multilib \
                    zlib1g-dev:i386 libexpat-dev:i386 \
-                   libx11-dev:i386 libxext-dev:i386 libxcb-randr0-dev:i386 libxrandr-dev:i386 \
+                   libx11-dev:i386 libxext-dev:i386 libxcb-randr0-dev:i386 libxrandr-dev:i386 libxcb-shm0-dev:i386 \
                    libwayland-dev:i386 \
                    libzstd-dev:i386 libunwind-dev:i386 libsensors-dev:i386 \
                    libdrm-dev:i386 libwayland-egl-backend-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libx11-xcb-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 \
