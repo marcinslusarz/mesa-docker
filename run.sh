@@ -16,3 +16,6 @@ docker run -it \
 --device /dev/dri/card0 \
 --device /dev/dri/renderD128 \
 marcinslusarz/mesa:$2
+
+# if you want gdb/strace to work:
+# --cap-add=SYS_PTRACE \
