@@ -14,7 +14,7 @@ Inside a container:
 ```
 cd mesa
 git fetch
-git checkout -f origin/master
+git checkout -f origin/main
 ./build.sh
 
 mygl.sh glxinfo | grep "version string"
